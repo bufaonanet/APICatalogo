@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APICatalogo</name>
+    </assembly>
+    <members>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Get(System.Int32)">
+            <summary>
+            Obtem uma Categoria pleo seu Id
+            </summary>
+            <param name="id">Código da Categoria</param>
+            <returns>Objeto Categoria</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Post(APICatalogo.DTOs.CategoriaDTO)">
+             <summary>
+             Inclui uma nova categoria
+             </summary>
+             <remarks>
+             Exemplo de request:
+            
+                 POST api/categorias
+                 {
+                    "categoriaId": 1,
+                    "nome": "categoria1",
+                    "imagemUrl": "http://teste.net/1.jpg"
+                 }
+             </remarks>
+             <param name="categoriaDTO">objeto Categoria</param>
+             <returns>O objeto Categoria incluida</returns>
+             <remarks>Retorna um objeto Categoria incluído</remarks>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Put(System.Int32,APICatalogo.DTOs.CategoriaDTO)">
+            <summary>
+            Altera uma Categoria
+            </summary>
+            <param name="id"></param>
+            <param name="categoriaDTO"></param>
+            <returns>retorna 400 ou 200</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Delete(System.Int32)">
+            <summary>
+            Deleta uma Categoria
+            </summary>
+            <param name="id">codigo da categoria (int) </param>
+            <returns></returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.ProdutosController.Get(System.Int32)">
+            <summary>
+            Obtem o produto pelo seu identificado produtoId
+            </summary>
+            <param name="id">Código do produto</param>
+            <returns>Um objeto Produto</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.ProdutosController.Post(APICatalogo.DTOs.ProdutoDTO)">
+            <summary>
+            Incluir um novo produto
+            </summary>
+            <param name="produtoDto"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
