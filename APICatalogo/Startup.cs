@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -141,7 +142,8 @@ namespace APICatalogo
                 });
             });
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddOData(opt => opt.Count().Filter().Expand().Select().OrderBy());           
         }
 
         public void Configure(
@@ -158,6 +160,12 @@ namespace APICatalogo
             {
                 LogLevel = LogLevel.Information
             }));
+
+            // Use odata route debug, /$odata
+            app.UseODataRouteDebug();
+
+            // Add OData /$query middleware
+            app.UseODataQueryRequest();
 
             //Adicionando o middleware de tratamento de erros global
             app.ConfigureExceptionHandler();

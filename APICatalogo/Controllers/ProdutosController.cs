@@ -4,6 +4,7 @@ using APICatalogo.Pagination;
 using APICatalogo.Repository;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -14,6 +15,7 @@ namespace APICatalogo.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    [EnableQuery]
     public class ProdutosController : ControllerBase
     {
         private readonly IUnitOfWork _uof;
